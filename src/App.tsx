@@ -1,55 +1,48 @@
-import "./App.css"
+import "./styles/theme.css"
+import "./styles/global.css"
 
-import { useState } from "react"
+import { Container } from "./components/Container"
+import { Countdown } from "./components/Countdown"
+import { Form } from "./components/Form"
+import { Input } from "./components/Input"
+import { Logo } from "./components/Logo"
+import { Menu } from "./components/Menu"
 
-// eslint-disable-next-line import/no-absolute-path
-import viteLogo from "/vite.svg"
-
-import reactLogo from "./assets/react.svg"
-
-function App() {
-  const [count, setCount] = useState(0)
-
+export function App() {
   return (
     <>
-      <div>
-        <a
-          href="https://vite.dev"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            src={viteLogo}
-            className="logo"
-            alt="Vite logo"
-          />
-        </a>
-        <a
-          href="https://react.dev"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            src={reactLogo}
-            className="logo react"
-            alt="React logo"
-          />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount(count => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Container>
+        <Logo />
+      </Container>
+
+      <Container>
+        <Menu />
+      </Container>
+
+      <Container>
+        <Countdown />
+      </Container>
+
+      <Container>
+        <Form className="form">
+          <div className="formRow">
+            <Input id="input" />
+          </div>
+
+          <div className="formRow">
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+
+          <div className="formRow">
+            <p>Ciclos</p>
+            <p>0 0 0 0 0</p>
+          </div>
+
+          <div className="formRow">
+            <button>Enviar</button>
+          </div>
+        </Form>
+      </Container>
     </>
   )
 }
-
-export default App
